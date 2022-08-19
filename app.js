@@ -36,12 +36,12 @@
 // console.log(listItem);
 
 //------------------------ Creating an element ------------------------
-const ul=document.querySelector('ul');
-const li=document.createElement('li');
+// const ul=document.querySelector('ul');
+// const li=document.createElement('li');
 
-// Adding elements
-ul.append(li);
-li.innerText="X-Man"
+// // Adding elements
+// ul.append(li);
+// li.innerText="X-Man"
 
 // Modifying the text
 // const listItem=document.querySelector(".list-items");
@@ -60,11 +60,45 @@ li.innerText="X-Man"
 
 // console.log(title.getAttribute('id'));
 
-li.classList.add('list-itemss');
+// li.classList.add('list-itemss');
 // li.classList.remove('list-itemss');
 
 // const container=document.querySelector(".container");
-console.log(li.classList.contains('list-itemss'));
+// console.log(li.classList.contains('list-itemss'));
 
 // ------------------------ Remove element -------------------------------
-li.remove();
+// li.remove();
+
+
+//------------------------- Traversing the DOM --------------------------
+
+// ========== Parent Node Traversal
+
+// let ul=document.querySelector("ul");
+// console.log(ul.parentElement.parentElement);
+// console.log(ul.parentNode.parentNode);
+
+// ============ Child Node Traversal
+
+// let ul=document.querySelector('ul');
+// console.log(ul.childNodes);  //it will shows 11 because indentation is also included as text node
+// console.log(ul.firstChild);
+// console.log(ul.lastChild);
+// ul.firstChild.style.background="red";  // error bcoz it is text node
+// ul.childNodes[1].style.backgroundColor="red";
+
+// console.log(ul.children);
+// console.log(ul.firstElementChild);
+// console.log(ul.lastElementChild);
+
+//============= Sibling Node Traversal
+
+// let ul=document.querySelector('ul');
+// let div=document.querySelector("div");
+// console.log(div.childNodes);
+// console.log(ul.previousSibling);
+// console.log(ul.previousElementSibling);
+// console.log(ul.nextSibling);
+
+
+
