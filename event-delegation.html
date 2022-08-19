@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        .grandparent {
+            padding: 20px;
+            background: red;
+        }
+
+        .parent {
+            padding: 30px;
+            background: green;
+
+        }
+
+        .child {
+            padding: 20px;
+            background: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- event delegation means when we click on particular element then only that element event will occur e.g if we click on parent then parent event will occur not parent and child both that means event propagation is discarded here. -->
+    <div class="grandparent" id="grandparent">
+        <div class="parent" id="parent">
+            <div class="child" id="child">
+                Event Delegation
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // document.getElementById('child').addEventListener('click',()=>{
+        //     console.log('child clicked');
+        // },false)
+
+        // document.getElementById('parent').addEventListener('click',()=>{
+        //     console.log('parent clicked');
+        // },false)
+
+
+        // to apply event delegation we need to apply event listener to outer parent only.
+
+        document.getElementById('grandparent').addEventListener('click', () => {
+            // console.log('grandparent clicked');
+
+            if (event.target.id === 'child') {
+                console.log("child clicked");
+            }
+
+            else if (event.target.id === 'parent') {
+
+                console.log("parent clicked");
+            }
+
+            else if (event.target.id === 'grandparent') {
+
+                console.log("grandparent clicked");
+            }
+        }, false)
+    </script>
+</body>
+
+</html>

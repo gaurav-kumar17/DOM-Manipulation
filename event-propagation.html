@@ -45,6 +45,7 @@
         // bubble phase i.e bottom to top
         document.getElementById("myP1").addEventListener("click", function () {
             alert("You clicked the white element!");
+            
             event.stopPropagation(); // is used to stop propagation i.e it wont show alert msg automatically on parent element,
             
         },false);
