@@ -26,11 +26,11 @@
             box-shadow: 0 0 10px rgb(255, 0, 119);
             width: 65%;
             background-color: white;
+            /* opacity: 0.4; */
             padding: 30px;
             border-radius: 30px;
         }
         .accordion .accordion-title{
-            outline: 1px solid red;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -58,6 +58,24 @@
 
             height: 0px;
             overflow:hidden;
+            transition: .5s;
+        }
+
+        /* Javascript styling */
+
+        /* below thing will only be active when active class is added to the container */
+        .accordion .content-container.active .answer{
+            height: 175px;
+          
+        }
+        .accordion .content-container.active .question{
+            font-size: 18px;
+            transition: .5s;
+        }
+        .accordion .content-container.active .question::after{
+
+            content: '-';
+            font-size: 25px;
             transition: .5s;
         }
     </style>
