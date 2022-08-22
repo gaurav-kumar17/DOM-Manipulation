@@ -45,12 +45,20 @@
         .accordion .content-container .question::after{
 
             content: '+';
+            font-weight: bold;
             position: absolute;
             right: 1px;
         }
         .accordion .content-container .answer{
-            outline:1px solid green;
+            /* outline:1px solid green; */
             padding-top: 12px;
+            font-size: 18px;
+            line-height: 1.3;
+            width: 100%;
+
+            height: 0px;
+            overflow:hidden;
+            transition: .5s;
         }
     </style>
 </head>
@@ -70,7 +78,7 @@
         </div>
 
         <div class="content-container">
-            <div class="question">What is the return policy?</div>
+            <div class="question">When will i receive my order?</div>
             <div class="answer">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui maxime fuga aut tenetur deserunt officiis
                 alias neque, facere quae corporis ad aliquam quis obcaecati ab repellendus nemo quia illum iusto
@@ -80,7 +88,7 @@
         </div>
 
         <div class="content-container">
-            <div class="question">What is the return policy?</div>
+            <div class="question">Where are you located?</div>
             <div class="answer">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui maxime fuga aut tenetur deserunt officiis
                 alias neque, facere quae corporis ad aliquam quis obcaecati ab repellendus nemo quia illum iusto
@@ -89,6 +97,8 @@
             </div>
         </div>
     </div>
+
+   <script src="accordion.js"></script>
 </body>
 
 </html>
