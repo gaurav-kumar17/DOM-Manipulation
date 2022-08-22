@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/a838936037.js" crossorigin="anonymous"></script>
+
+    <title>Stop watch (Pro)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+
+            height: 100vh;
+            /* background: url('img1.jpg') no-repeat center center/ cover; */
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+
+            outline:1px solid yellow;
+            width: 50%;
+            height: 25%;
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0 0 53px red;
+        }
+        #timer{
+            outline: 1px solid pink;
+            font-size: 40px;
+            text-align: center;
+            margin: 0px auto;
+            padding: 20px;
+        }
+        .buttons{
+            outline:1px solid red;
+            text-align: center;
+        }
+        button{
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button i{
+            font-size: 20px;
+            padding: 9px;
+            color: white;  
+            width: 50px;          
+        }
+        #play{
+            background-color: green;
+        }
+        #pause{
+            background-color: orange;
+        }
+        #reset{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="timer">
+            00:00:00
+        </div>
+
+        <div class="buttons">
+            <button id="startStopBtn">
+                <i class="fa-solid fa-play" id="play"></i>
+            </button>
+
+            <button id="resetBtn">
+                <i class="fa-solid fa-arrow-rotate-left" id="reset"></i>
+            </button>
+        </div>
+    </div>
+
+    <script></script>
+</body>
+
+</html>
