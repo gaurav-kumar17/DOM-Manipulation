@@ -15,7 +15,8 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
 
             height: 100vh;
             /* background: url('img1.jpg') no-repeat center center/ cover; */
@@ -25,44 +26,51 @@
             align-items: center;
         }
 
-        .container{
+        .container {
 
-            outline:1px solid yellow;
+            outline: 1px solid yellow;
             width: 50%;
             height: 25%;
             background-color: white;
             border-radius: 30px;
             box-shadow: 0 0 53px red;
         }
-        #timer{
-            outline: 1px solid pink;
+
+        #timer {
+            /* outline: 1px solid pink; */
             font-size: 40px;
             text-align: center;
             margin: 0px auto;
             padding: 20px;
         }
-        .buttons{
-            outline:1px solid red;
+
+        .buttons {
+            /* outline:1px solid red; */
             text-align: center;
         }
-        button{
+
+        button {
             margin: 0 10px;
             border: none;
             cursor: pointer;
         }
-        button i{
+
+        button i {
             font-size: 20px;
             padding: 9px;
-            color: white;  
-            width: 50px;          
+            color: white;
+            width: 50px;
         }
-        #play{
+
+        #play {
             background-color: green;
         }
-        #pause{
+
+        #pause {
             background-color: orange;
         }
-        #reset{
+
+        #reset {
             background-color: red;
         }
     </style>
@@ -85,7 +93,61 @@
         </div>
     </div>
 
-    <script></script>
+    <script>
+        // Variables for buttons
+        const startStopBtn = document.querySelector('#startStopBtn');
+        const resetBtn = document.querySelector('#resetBtn');
+
+        // Variables for time values
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        // Variables for leading zeros.
+        let leadingSeconds = 0;
+        let leadingMinutes = 0;
+        let leadingHours = 0;
+
+        // Stop watch function
+
+        function stopWatch() {
+            seconds++;
+            if (seconds / 60 == 1) {
+                seconds = 0;
+                minutes++;
+
+                if (minutes / 60 == 1) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            // less than 10 means second is in 1 digit. So these below if else condition is provided to show timer with leading zeros.
+            if (seconds < 10) {
+                leadingSeconds = "0" + seconds.toString();
+            }
+            else{
+                leadingSeconds=seconds;
+            }
+
+            if (minutes < 10) {
+                leadingMinutes = "0" + minutes.toString();
+            }
+            else{
+                leadingMinutes=minutes;
+            }
+
+            if (hours < 10) {
+                leadingHours = "0" + hours.toString();
+            }
+            else{
+                leadingHours=hours;
+            }
+
+            let timer = document.getElementById('timer').innerText = leadingHours + ":" + leadingMinutes + ":" + leadingSeconds;
+        }
+        window.setInterval(stopWatch,1000);
+    </script>
 </body>
 
 </html>
