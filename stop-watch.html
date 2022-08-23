@@ -108,6 +108,11 @@
         let leadingMinutes = 0;
         let leadingHours = 0;
 
+        // Variables for set Interval & timerStatus
+        let timeInterval = null;
+        let timerStatus = "stopped";
+
+
         // Stop watch function
 
         function stopWatch() {
@@ -126,27 +131,53 @@
             if (seconds < 10) {
                 leadingSeconds = "0" + seconds.toString();
             }
-            else{
-                leadingSeconds=seconds;
+            else {
+                leadingSeconds = seconds;
             }
 
             if (minutes < 10) {
                 leadingMinutes = "0" + minutes.toString();
             }
-            else{
-                leadingMinutes=minutes;
+            else {
+                leadingMinutes = minutes;
             }
 
             if (hours < 10) {
                 leadingHours = "0" + hours.toString();
             }
-            else{
-                leadingHours=hours;
+            else {
+                leadingHours = hours;
             }
 
             let timer = document.getElementById('timer').innerText = leadingHours + ":" + leadingMinutes + ":" + leadingSeconds;
         }
-        window.setInterval(stopWatch,1000);
+        // window.setInterval(stopWatch,1000);
+
+        startStopBtn.addEventListener('click', function () {
+
+            if (timerStatus === 'stopped') {
+                timeInterval = window.setInterval(stopWatch, 1000);
+                document.getElementById('startStopBtn').innerHTML = `<i class="fa-solid fa-pause" id="pause"></i>`;
+
+                timerStatus = 'started';
+            }
+            else {
+                // clearInterval() is used to stop the time.
+
+                // To clear an interval, use the id returned from setInterval():
+
+                //myInterval = setInterval(function, milliseconds);
+                // Then you can to stop the execution by calling clearInterval():
+                // clearInterval(myInterval);
+
+                window.clearInterval(timeInterval);
+                document.getElementById('startStopBtn').innerHTML = `<i class="fa-solid fa-play" id="play"></i>`;
+
+                timerStatus = 'stopped';
+            }
+        })
+
+    
     </script>
 </body>
 
