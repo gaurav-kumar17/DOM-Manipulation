@@ -36,5 +36,18 @@ addTask.addEventListener("click",function(){
     }
 
     inputTask.value="";
-    console.log(taskContainer);
+
+    checkButton.addEventListener("click",function(){
+
+        console.log(checkButton.parentElement);
+        checkButton.parentElement.style.textDecoration="line-through"
+    })
+
+    deleteButton.addEventListener("click",function(e){
+
+        let target=e.target;
+        target.parentElement.parentElement.remove();
+        // console.log(target);
+        // console.log(taskContainer);
+    })
 })
