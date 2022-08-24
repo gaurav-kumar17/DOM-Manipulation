@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <script src="https://kit.fontawesome.com/a838936037.js" crossorigin="anonymous"></script>
     <title>To-do List (Master)</title>
     <style>
-          * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -24,38 +25,92 @@
             align-items: center;
         }
 
-        #add-task-container{
-            outline:1px solid red;
+        #add-task-container {
+            outline: 1px solid red;
             width: 350px;
-            padding:20px 10px;
+            padding: 20px 10px;
             background-color: white;
             border-radius: 20px;
             box-shadow: 0 0 40px red;
+            margin-bottom: 20px;
             display: flex;
         }
-        input{
-            flex:5;
+
+        input {
+            flex: 5;
             margin-right: 10px;
             border-radius: 10px;
             font-size: 1.2rem;
             padding: 5px;
         }
-        #add-task{
+
+        #add-task {
             transition: .3s;
             font-size: 1.2rem;
-            padding:5px;
-            flex:1;
+            padding: 5px;
+            flex: 1;
             background-color: white;
-            color:green;
+            color: green;
             border: 2px solid green;
             border-radius: 10px;
         }
-        #add-task:hover{
+
+        #add-task:hover {
             background-color: green;
             color: white;
         }
+
+        /* Styling for task which get added to to-do list */
+        .task {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 3px;
+            padding: 5px;
+
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .task li {
+            /* outline: 1px solid red; */
+            list-style: none;
+            flex: 4;
+            padding: 5px;
+            font-size: 1.3rem;
+            margin:8px;
+        }
+        .task button{
+            flex:1;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .task .checkTask{
+            color: orange;
+            margin-right: 5px;
+            border: 2px solid orange;
+            font-size: 1.5rem;
+        }
+        .task .checkTask:hover{
+            background-color: orange;
+            color: white;
+        }
+        .task .deleteTask{
+            color: red;
+            border: 2px solid red;
+            font-size: 1.3rem;
+        }
+        .task .deleteTask:hover{
+            background-color: red;
+            color: white;
+        }
+        
     </style>
 </head>
+
 <body>
     <div class="container">
         <div id="add-task-container">
@@ -70,5 +125,8 @@
 
         </div>
     </div>
+
+    <script src="to-do-list.js"></script>
 </body>
+
 </html>
