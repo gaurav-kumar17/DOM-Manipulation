@@ -8,7 +8,52 @@
     <script src="https://kit.fontawesome.com/a838936037.js" crossorigin="anonymous"></script>
     <title>To-do List (Master)</title>
     <style>
-        
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            height: 100vh;
+            /* background: url('img1.jpg') no-repeat center center/ cover; */
+            background-color: plum;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #add-task-container{
+            outline:1px solid red;
+            width: 350px;
+            padding:20px 10px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 40px red;
+            display: flex;
+        }
+        input{
+            flex:5;
+            margin-right: 10px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            padding: 5px;
+        }
+        #add-task{
+            transition: .3s;
+            font-size: 1.2rem;
+            padding:5px;
+            flex:1;
+            background-color: white;
+            color:green;
+            border: 2px solid green;
+            border-radius: 10px;
+        }
+        #add-task:hover{
+            background-color: green;
+            color: white;
+        }
     </style>
 </head>
 <body>
