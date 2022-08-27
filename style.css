@@ -11,6 +11,7 @@
 .slide img{
 
     width: 100%;
+    height: 500px;
 }
 .arrow{
     cursor: pointer;
@@ -41,4 +42,7 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.498);
     padding: 15px 20px;
+}
+.slide{
+    display: none;
 }
