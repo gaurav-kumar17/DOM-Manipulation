@@ -6,13 +6,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Background changer</title>
+    <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            outline:1px solid red;
+            margin: 0px;
+            padding: 20px 100px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        img{
+            /* outline:1px solid red; */
+            width: 100%;
+            height: auto;
+            margin:0px auto;
+            
+        }
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 2px solid grey;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        #white{
+            background-color:white ;
+        }
+        #aqua{
+            background-color: aqua;
+        }
+
+        #violet{
+            background-color: violet;
+        }
+        #black{
+            background-color: black;
+        }
+        #color-switcher{
+            /* outline: 1px solid red; */
+            text-align: right;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>About Us</h1>
+
+    <div id="color-switcher">
+        <span class="btn" id="white" onclick="changeBg('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBg('#7fffd4')"></span>
+        <span class="btn" id="violet"onclick="changeBg('#ce9aff')"></span>
+        <span class="btn" id="black" onclick="changeBg('#000000')"></span>
+    </div>
+
+    <h1 class="text">About Us</h1>
 
     <img src="https://image.shutterstock.com/image-photo/group-multiethnic-business-people-holding-260nw-191139815.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nihil molestiae eum rem, veritatis, officiis iusto
+
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nihil molestiae eum rem, veritatis, officiis iusto
         fugiat assumenda vel incidunt optio ipsa. Magnam soluta error maxime temporibus dolore, odio perferendis
         praesentium optio inventore. Repellat error porro facere quod, ab deleniti aliquid quae iste ea id temporibus
         tenetur dolore, eveniet doloribus illum rem. Inventore doloremque voluptas cupiditate tenetur voluptates vel.
@@ -50,6 +112,27 @@
         voluptates vero omnis facilis corrupti? Doloremque, quae.
     </p>
 
+
+    <script>
+        function changeBg(color)
+        {
+            document.body.style.backgroundColor=color;
+            let txt=document.getElementsByClassName("text");
+            if(color=='#000000')
+            {
+                for(let elm of txt)
+                {
+                    elm.style.color='white'
+                }
+            }
+            else{
+                for(let elm of txt)
+                {
+                    elm.style.color='black';
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
