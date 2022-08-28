@@ -10,10 +10,12 @@ function controller(x)
 
     //right
     // flag=2+1=3;
+    // window.setInterval(slideshow(flag),1000);
     slideshow(flag);
 }
 
 slideshow(flag);
+// window.setInterval(slideshow(flag),1000);
 
 function slideshow(num)
 {
